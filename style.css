@@ -1,0 +1,17 @@
+.table {
+    display: none;
+}
+
+.cell {
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(47, 90, 76);
+    border: 1px solid white;
+}
+
+.btn-restart {
+    display: none;
+}

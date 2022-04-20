@@ -9,6 +9,35 @@
     <script src="./main.js" defer></script>
 </head>
 <body>
-    
+    <section class="container">
+        <h1 class="title">Tic Tac Toe</h1>
+        <form action="">
+            <label for="player1">Player1(X)</label>
+            <input type="text" id="player1">
+            <label for="player2">Player2(0)</label>
+            <input type="text" id="player2">
+            <button class="btn-play">Play Game</button>
+        </form>
+    </section>
+    <div class="playing"></div>
+
+    <table class="table">
+        <tr>
+            <td class="cell" data-cell="0"></td>
+            <td class="cell" data-cell="1"></td>
+            <td class="cell" data-cell="2"></td>
+        </tr>
+        <tr>
+            <td class="cell" data-cell="3"></td>
+            <td class="cell" data-cell="4"></td>
+            <td class="cell" data-cell="5"></td>
+        </tr>
+        <tr>
+            <td class="cell" data-cell="6"></td>
+            <td class="cell" data-cell="7"></td>
+            <td class="cell" data-cell="8"></td>
+        </tr>
+    </table>
+    <button class="btn-restart">Restart Game</button>
 </body>
 </html>
