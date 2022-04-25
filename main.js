@@ -79,6 +79,8 @@ function winnerOfGamer(valuePositionX, valuePosition0, player1, player2) {
 
     if (winner0) return player2;
 
+    if(valuePositionX.length + valuePosition0.length === 9) return false;
+
     return false;
 }
 
@@ -87,7 +89,7 @@ const Player = (name) => {
 }
 
 const displayController = (() => {
-    const container = document.querySelector('.container');
+    const title = document.querySelector('.title');
     const btnPlay = document.querySelector('.btn-play');
     const table = document.querySelector('.table');
     const btnRestart = document.querySelector('.btn-restart');
@@ -95,6 +97,8 @@ const displayController = (() => {
     const inputPlayer1 = document.querySelector('#player1');
     const inputPlayer2 = document.querySelector('#player2');
     const playing = document.querySelector('.playing');
+    const form = document.querySelector('.form');
+    const background = document.querySelector('.background');
     let valuePositionX = [];
     let valuePosition0 = [];
     let player1;
@@ -104,16 +108,17 @@ const displayController = (() => {
 
     btnPlay.addEventListener('click', e => {
         e.preventDefault();
-        container.style.cssText += 'display: none;';
+        form.style.cssText += 'display: none;';
         table.style.cssText += 'display: block;';
         btnRestart.style.cssText += 'display: block;';
+        title.style.cssText += 'border-bottom: 3px solid #236cfb; margin-bottom: 25px;';
+        background.style.cssText += 'display: none;';
 
         player1 = Player(inputPlayer1.value);
         player2 = Player(inputPlayer2.value);
-        if (!player1) player1 = 'Player1';
-        if (!player2) player2 = 'Player2';
+        if (!player1.name) player1.name = 'Player1';
+        if (!player2.name) player2.name = 'Player2';
         playing.textContent = `${player1.name} to move`;
-        console.log('É a vez do ', player1.name);
     });
 
     btnRestart.addEventListener('click', e => {
@@ -163,6 +168,10 @@ const displayController = (() => {
             }
             if (gameOver) playing.textContent = `${gameOver} winner`;
 
+            if((valuePositionX.length + valuePosition0.length === 9) && !gameOver) {
+                playing.textContent = 'Draw';
+            }
+            
             cell.textContent = displayValue;
             if (displayValue === 'X') {
                 displayValue = '0';

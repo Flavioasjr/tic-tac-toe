@@ -1,17 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;800;900&display=swap');
+
+:root {
+    --position-top-background: -372px;
+    --position-left-background: -54px;
+    --position-bottom-background: -932px;
+    --position-right-background: -62px;
+    --background-font-size: 15rem;
+}
+
+html {
+    background-color: #1e2336;
+    font-family: sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.content {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+.background-text1 {
+    font-size: var(--background-font-size);
+    color: #070a20;
+    position: absolute;
+    top: var(--position-top-background);
+    left: var(--position-left-background);
+    font-weight: 700;
+}
+
+.background-text2 {
+    color: #070a20;
+    font-size: var(--background-font-size);
+    position: absolute;
+    bottom: var(--position-bottom-background);
+    right: var(--position-right-background);
+    font-weight: 700;
+}
+
+.container {
+    z-index: 1;
+    color: white;
+    background-color: #1e2336;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    z-index: 1;
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-bottom: 60px;
+}
+
+#player1, #player2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 3px;
+    width: 170px;
+    padding: 2px 5px 2px 5px;
+}
+
+#player1:focus, #player2:focus {
+    outline: none;
+    border: 1px solid #a9bfeb;
+    box-shadow: 0px 2px 5px 1px #a9bfeb;
+} 
+
+.btn-play {
+    display: block;
+    width: 150px;
+    background-color: #f8d63f;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #f8d63f;
+    border-radius: 5px;
+}
+
 .table {
+    border-spacing: 0;
     display: none;
+    margin-bottom: 30px;
 }
 
 .cell {
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     color: white;
     width: 100px;
     height: 100px;
-    background-color: rgb(47, 90, 76);
-    border: 1px solid white;
+    background-color: #1e2336;
+}
+
+.cell[data-cell='0'] {
+    border-bottom: 3px solid #236cfb;
+    border-right: 3px solid #236cfb;
+}
+
+.cell[data-cell='1'] {
+    border-bottom: 3px solid #236cfb;
+    border-right: 3px solid #236cfb;
+}
+
+.cell[data-cell='2'] {
+    border-bottom: 3px solid #236cfb;
+}
+
+.cell[data-cell='3'] {
+    border-bottom: 3px solid #236cfb;
+    border-right: 3px solid #236cfb;
+}
+
+.cell[data-cell='4'] {
+    border-bottom: 3px solid #236cfb;
+    border-right: 3px solid #236cfb;
+}
+
+.cell[data-cell='5'] {
+    border-bottom: 3px solid #236cfb;
+}
+
+.cell[data-cell='6'] {
+    border-right: 3px solid #236cfb;
+}
+
+.cell[data-cell='7'] {
+    border-right: 3px solid #236cfb;
 }
 
 .btn-restart {
     display: none;
+    width: 150px;
+    background-color: #f8d63f;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #f8d63f;
+    border-radius: 5px;
+}
+
+.playing {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+td {
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --position-top-background: -485px;
+        --position-left-background: -65px;
+        --position-bottom-background: -1063px;
+        --position-right-background: -88px;
+        --background-font-size: 20rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --position-top-background: -607px;
+        --position-left-background: -85px;
+        --position-bottom-background: -1378px;
+        --position-right-background: -108px;
+        --background-font-size: 25rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    :root {
+        --position-bottom-background: -1635px;
+    }
 }
