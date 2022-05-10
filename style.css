@@ -26,7 +26,10 @@ body {
 .background {
     position: relative;
     font-family: 'Poppins',sans-serif;
+}
 
+.background-display {
+    display: none;
 }
 
 .background-text1 {
@@ -65,6 +68,15 @@ body {
     margin-bottom: 60px;
 }
 
+.title-table {
+    border-bottom: 3px solid #236cfb; 
+    margin-bottom: 25px;
+}
+
+.form-display {
+    display: none;
+}
+
 #player1, #player2 {
     font-size: 1rem;
     margin-bottom: 20px;
@@ -95,6 +107,10 @@ body {
     border-spacing: 0;
     display: none;
     margin-bottom: 30px;
+}
+
+.table-display {
+    display: block;
 }
 
 .cell {
@@ -151,6 +167,10 @@ body {
     font-weight: 600;
     border: 1px solid #f8d63f;
     border-radius: 5px;
+}
+
+.btn-restart-display {
+    display: block;
 }
 
 .playing {
