@@ -16,7 +16,7 @@ class Player {
     }
 }
 
-function setPlayer(player, gameOver = false) {
+function showSetPlayer(player, gameOver = false) {
     const playing = document.querySelector('.playing');
 
     if (gameOver) {
@@ -142,7 +142,7 @@ const displayController = (() => {
         player2 = new Player(inputPlayer2.value);
         if (!player1.name) player1.namePlayer = 'Player1';
         if (!player2.name) player2.namePlayer = 'Player2';
-        setPlayer(player1.name);
+        showSetPlayer(player1.name);
     });
 
     btnRestart.addEventListener('click', e => {
@@ -152,14 +152,14 @@ const displayController = (() => {
         if (boardCounter % 2 === 0) {
             if (displayValue === 'X') {
                 displayValue = '0';
-                setPlayer(player2.name);
+                showSetPlayer(player2.name);
             } else {
                 displayValue = 'X';
-                setPlayer(player1.name);
+                showSetPlayer(player1.name);
             }
         } else {
-            if (displayValue === 'X') setPlayer(player1.name);
-            if (displayValue === '0') setPlayer(player2.name);
+            if (displayValue === 'X') showSetPlayer(player1.name);
+            if (displayValue === '0') showSetPlayer(player2.name);
         }
 
         boardCounter = 0;
@@ -180,22 +180,22 @@ const displayController = (() => {
             boardCounter++;
 
             if (displayValue === 'X') {
-                setPlayer(player2.name);
+                showSetPlayer(player2.name);
                 valueBoardGame[Number(e.target.attributes['2'].value)][Number(e.target.attributes['3'].value)] = 'X'
             }
 
             if (displayValue === '0') {
-                setPlayer(player1.name);
+                showSetPlayer(player1.name);
                 valueBoardGame[Number(e.target.attributes['2'].value)][Number(e.target.attributes['3'].value)] = 'O'
             }
 
             const winner = compareGameBoard(valueBoardGame);
             gameOver = winnerOfGamer(winner, player1.name, player2.name);
 
-            if (gameOver) setPlayer('', gameOver); 
+            if (gameOver) showSetPlayer('', gameOver); 
 
             if ((boardCounter=== 9) && !gameOver) {
-                setPlayer('DRAW');
+                showSetPlayer('DRAW');
             }
 
             cell.textContent = displayValue;
